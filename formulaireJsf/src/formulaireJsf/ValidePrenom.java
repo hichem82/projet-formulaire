@@ -13,7 +13,7 @@ import javax.faces.validator.ValidatorException;
 @FacesValidator
 public class ValidePrenom implements Validator{
 
-	private static final String NOM_EXISTE_DEJA = "Ce prenom n'est pas valide";
+	private static final  String NOM_EXISTE_DEJA = "Ce prenom n'est pas valide";
 
 	@Override
 	public void validate(FacesContext arg0, UIComponent component, Object value) throws ValidatorException {
