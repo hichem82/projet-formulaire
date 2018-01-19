@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    	<title>Premier exemple JSF</title>
+    </h:head>
+    <h:body>
+    	 <h:form>
+         <fieldset>
+         	<legend>Inscription</legend>
+	     		
+	        <h:outputLabel for="nom">Nom d'utilisateur </h:outputLabel>
+	        <h:inputText id="nom" value="#{bonjourBean.nom}"  size="20" maxlength="20" binding="#{varNom}">
+		    <f:validator validatorId="valideNom" /> 
+ 	        </h:inputText>
+ 	        <h:message for="nom"/>        
+	        <br />
+	        
+	         <h:outputLabel for="prenom">Prenom d'utilisateur </h:outputLabel>
+	        <h:inputText id="prenom" value="#{bonjourBean.prenom}"  size="20" maxlength="20">
+	         <f:validator validatorId="validePrenom" /> 
+	         <f:attribute name="attributComparaison" value ="#{varNom}"/>
+	         <f:validator validatorId="comparrerNomPrenom" /> 
+ 	        </h:inputText>
+ 	        <h:message for="prenom"/> 
+	        <br />
+			
+	        <h:commandButton value="Submit" action="affiche"/>
+	        <br />
+          </fieldset>
+        </h:form> 	
+    </h:body>
+</html>
